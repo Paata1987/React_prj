@@ -26,41 +26,21 @@
       //get container div
       let container = document.getElementById("container");
 
-      //component
-      class Share extends React.Component {
+      class Logic extends React.Component {
+        getText() {
+          return "Get from the method";
+        }
+
         render() {
           return (
             <div>
-              <a href={this.props.url} target="_blank" title={this.props.label}>
-                Visit Website
-              </a>
+              <a href={this.props.url}>{this.getText()}</a>
             </div>
           );
         }
-      };
+      }
 
-      let address = "www.avoe.ge";
-      let lb = "mySite";
-
-      //component class
-      class Fruits extends React.Component {
-        render() {
-          let fruit_item = "apple";
-          return (
-            <div>
-              <ul class="fruits">
-                <li class="item">Mango</li>
-                <li class="item">Banan</li>
-                <li class="item">{fruit_item}</li>
-              </ul>
-            </div>
-          );
-        }
-      };
-
-      //rednder UI
-      ReactDOM.render(<Share url={address} label={lb} />, container);
-    
+      ReactDOM.render(<Logic uri="https://www.download.ge" />, container);
     </script>
   </body>
 </html>
