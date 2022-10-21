@@ -8,6 +8,7 @@
   </head>
   <body>
     <div id="container"></div>
+    <div id="ul_div"></div>
     <!-- react and react.DOM -->
     <script
       src="https://unpkg.com/react@18/umd/react.development.js"
@@ -18,12 +19,24 @@
       crossorigin
     ></script>
     <script>
+      //create react h1 element
       let h1 = React.createElement(
         "hi",
-        { id: "heading", style: { color: "lightblue" } },
+        { id: "heading", style: { color: "darkblue" } },
         "Hellow React"
       );
+
+      //render in ui
       ReactDOM.render(h1, document.getElementById("container"));
+
+      //create unordered list element
+      let ul = React.createElement(
+        "ul",
+        null,
+        React.createElement("li", null, "Banana"),
+        React.createElement("li", null, "Mango")
+      );
+      ReactDOM.render(ul, document.getElementById("ul_div"));
     </script>
   </body>
 </html>
