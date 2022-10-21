@@ -9,6 +9,9 @@
   <body>
     <div id="container"></div>
     <div id="ul_div"></div>
+
+    <!-- include babel library.js  to transcompile-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.19.6/babel.min.js"></script>
     <!-- react and react.DOM -->
     <script
       src="https://unpkg.com/react@18/umd/react.development.js"
@@ -18,25 +21,46 @@
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
       crossorigin
     ></script>
-    <script>
-      //create react h1 element
-      let h1 = React.createElement(
-        "hi",
-        { id: "heading", style: { color: "darkblue" } },
-        "Hellow React"
-      );
 
-      //render in ui
-      ReactDOM.render(h1, document.getElementById("container"));
+    <script type="text/babel">
+      //get container div
+      let container = document.getElementById("container");
 
-      //create unordered list element
-      let ul = React.createElement(
-        "ul",
-        null,
-        React.createElement("li", null, "Banana"),
-        React.createElement("li", null, "Mango")
-      );
-      ReactDOM.render(ul, document.getElementById("ul_div"));
+      //component
+      class Share extends React.Component {
+        render() {
+          return (
+            <div>
+              <a href={this.props.url} target="_blank" title={this.props.label}>
+                Visit Website
+              </a>
+            </div>
+          );
+        }
+      };
+
+      let address = "www.avoe.ge";
+      let lb = "mySite";
+
+      //component class
+      class Fruits extends React.Component {
+        render() {
+          let fruit_item = "apple";
+          return (
+            <div>
+              <ul class="fruits">
+                <li class="item">Mango</li>
+                <li class="item">Banan</li>
+                <li class="item">{fruit_item}</li>
+              </ul>
+            </div>
+          );
+        }
+      };
+
+      //rednder UI
+      ReactDOM.render(<Share url={address} label={lb} />, container);
+    
     </script>
   </body>
 </html>
