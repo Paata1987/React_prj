@@ -17,6 +17,7 @@ class Timer extends Component {
            counter: 0,
            message: "Click Me"
         };
+        console.log("Timer constructor called")
     }
 
 
@@ -33,6 +34,9 @@ class Timer extends Component {
                 <h5>{this.state.counter}</h5>
                 <button onClick={this.onClick} className='btn btn-warning'>{this.state.message}</button>
                 <p>{this.state.value}</p>
+                <h6>
+                    <Logger time = {this.state.counter} />
+                </h6>
             </div>
         )
 
@@ -52,3 +56,19 @@ class Timer extends Component {
 }
  
 export default Timer;
+
+class Logger extends Component {
+
+    componentWillRecieveProps(newProps){
+        console.log("ComponentwillRecieveProps() is Triggered");
+    }
+    
+    state = {  } 
+    render() { 
+        return this.props.timr;
+    }
+
+    
+}
+ 
+//export default ;

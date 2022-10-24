@@ -7,11 +7,14 @@ import FruitList from './Component/fruitList';
 import Timer from './Component/Timer';
 import "bootstrap/dist/css/bootstrap.css";
 import Box from './Component/funCom';
+import LifeCycle from './Component/lifeCycle';
+import Button from './Component/button';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Box me="Props"/>
+    <Button />
   </React.StrictMode>
 );
 
