@@ -4,11 +4,16 @@ class Button extends Component {
 
     constructor(props){
         super(props);
-        this.handlerMe = this.Handler.bind(this);
+        this.handlerMe = this.handlerclick;
     }
 
     Handler(event){
         console.log(this, event.target);
+    }
+
+    handlerclick(event){
+        let name =event.target;
+        console.log(event.nativeEvent.toElement);
     }
     
     render() { 
@@ -19,7 +24,7 @@ class Button extends Component {
                         console.log(e.target);
                     }} >Hover Me</p>
                 </div>
-                {/* <button className='btn btn-warning' onClick={this.handlerMe}>Save</button> */}
+                <button className='btn btn-warning' onClick={this.handlerMe}>Save</button>
             </div>
         );
     }
