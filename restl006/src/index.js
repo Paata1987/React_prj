@@ -5,12 +5,13 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import FruitList from './Component/fruitList';
 import Timer from './Component/Timer';
-import "bootstrap/dist/css/bootstrap.css"
+import "bootstrap/dist/css/bootstrap.css";
+import Box from './Component/funCom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Timer me="Props"/>
+    <Box me="Props"/>
   </React.StrictMode>
 );
 
