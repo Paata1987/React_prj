@@ -16,36 +16,36 @@ class Button extends Component {
 
     handlerclick(event){
         this.setState({counter:++this.state.counter});
-        /* let name =event.target;
-        console.log(event.nativeEvent.toElement); */
     }
     
     render() { 
         return (
             <div className='App'>
-                <Buttonclick handleMe={this.handlerclick.bind(this)}
-                 counter = {this.state.counter}/>
-               {/*  <div className="child">
-                    <p onMouseOver= { (e)=>{
-                        console.log(e.target);
-                    }} >Hover Me</p>
-                </div> */}
-                {/* <button className='btn btn-primary' onClick={this.handlerclick.bind(this)}>Increase Vaue By Clicking ME {this.state.counter}</button> */}
+                <Buttonclick handler={this.handlerclick.bind(this)} />
+                <Counter value={this.state.counter}/>
             </div>
         );
     }
 }
- 
+
 export default Button;
 
 
 let Buttonclick = (props) =>{
     return(
-            <button 
-            className='btn btn-primary' 
-            onClick={props.handleMe}>
-                Increase Vaue By Clicking ME 
-                {props.counter}
+            <button className='btn btn-primary' onClick={props.handler}>
+                Click Me!
             </button>
     );
+}
+
+
+class Counter extends Component{
+    render(){
+        return(
+            <div>
+                <em>Clicked {this.props.value} times</em>
+            </div>
+        );
+    }
 }
