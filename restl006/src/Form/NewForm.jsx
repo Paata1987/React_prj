@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
 class NewForm extends Component {
-    state = {  }
+    state = { 
+       
+     }
 
 
     state = { 

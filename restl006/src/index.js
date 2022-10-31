@@ -10,12 +10,14 @@ import Box from "./Component/funCom";
 import LifeCycle from "./Component/lifeCycle";
 import Button from "./Component/button";
 import NewForm from "./Form/NewForm";
+import Order from "./Form/Order";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Button />
     <NewForm />
+    <Order />
   </React.StrictMode>
 );
 
