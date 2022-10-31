@@ -1,20 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 //import App from './App';
-import reportWebVitals from './reportWebVitals';
-import FruitList from './Component/fruitList';
-import Timer from './Component/Timer';
+import reportWebVitals from "./reportWebVitals";
+import FruitList from "./Component/fruitList";
+import Timer from "./Component/Timer";
 import "bootstrap/dist/css/bootstrap.css";
-import Box from './Component/funCom';
-import LifeCycle from './Component/lifeCycle';
-import Button from './Component/button';
+import Box from "./Component/funCom";
+import LifeCycle from "./Component/lifeCycle";
+import Button from "./Component/button";
+import NewForm from "./Form/NewForm";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Button />
+    <NewForm />
   </React.StrictMode>
 );
 

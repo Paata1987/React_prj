@@ -3,10 +3,8 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello Wordld</h1>
-    </div>
-  );
+    
+  )
 }
 
 export default App;

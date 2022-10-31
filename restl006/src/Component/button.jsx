@@ -7,12 +7,9 @@ class Button extends Component {
         this.state = {
             counter : 0
         }
-     //   this.handlerMe = this.handlerclick;
+    
     }
 
-  /*   Handler(event){
-        console.log(this, event.target);
-    } */
 
     handlerclick(event){
         this.setState({counter:++this.state.counter});
@@ -20,7 +17,7 @@ class Button extends Component {
     
     render() { 
         return (
-            <div className='App'>
+            <div className=''>
                 <Buttonclick handler={this.handlerclick.bind(this)} />
                 <Counter value={this.state.counter}/>
             </div>
