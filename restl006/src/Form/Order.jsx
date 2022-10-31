@@ -1,68 +1,67 @@
 import React, { Component } from "react";
 
 class Order extends Component {
-  state = {
-    size: "Medium",
-  };
-
-  handleChange(event) {
-    this.setState({
-      size: event.target.value,
-    });
+  constructor(props) {
+    super(props);
+    this.handleChanges = this.handleCheckboxChanges.bind(this);
+    this.state = {
+      checkboxGroup: {
+        node: false,
+        react: true,
+        express: false,
+      },
+    };
   }
 
-  handelSubmit(event) {
-    console.log(`You have Selected ${this.state.size} Pizza`);
-    event.preventDefault();
+  handleCheckboxChanges(event) {
+    let obj = Object.assign(this.state.checkboxGroup);
+    obj[event.target.value] = event.target.checked;
+    this.setState({
+      checkboxGroup: obj,
+    });
+    console.log(this.state.checkboxGroup);
   }
 
   render() {
     return (
       <div className="App">
-        <h2 className="p-4">Select Pizza Size</h2>
-        <form onSubmit={this.handelSubmit.bind(this)}>
-          <ul className="list-inline">
-            <li>
-              <label>
-                <input
-                  type="radio"
-                  hecked={this.state.size == "Small"}
-                  onChange={this.handleChange.bind(this)}
-                  value="small"
-                  name="radioGroup"
-                />
-                Small
-              </label>
-            </li>
-            <li>
-              <label>
-                <input
-                  type="radio"
-                  checked={this.state.size == "Medium"}
-                  onChange={this.handleChange.bind(this)}
-                  value="Medium"
-                  name="radioGroup"
-                />
-                Medium
-              </label>
-            </li>
-            <li>
-              <label>
-                <input
-                  type="radio"
-                  hecked={this.state.size == "Large"}
-                  onChange={this.handleChange.bind(this)}
-                  value="Large"
-                  name="radioGroup"
-                />
-                Large
-              </label>
-            </li>
-          </ul>
-          <button type="submit" className="btn btn-danger">
-            Make a Order
-          </button>
-        </form>
+        <h2 className="p-2">Chekbox</h2>
+
+        <label>
+          <input
+            type="checkbox"
+            checked={this.state.checkboxGroup.node}
+            className="m-2"
+            name="chekcboxGroup"
+            value="node"
+            onChange={this.handleChanges}
+          />
+          Node
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            checked={this.state.checkboxGroup.react}
+            className="m-2"
+            name="chekcboxGroup"
+            value="react"
+            onChange={this.handleChanges}
+          />
+          React
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            checked={this.state.checkboxGroup.express}
+            className="m-2"
+            name="chekcboxGroup"
+            value="express"
+            onChange={this.handleChanges}
+          />
+          Express
+        </label>
       </div>
     );
   }
